@@ -1,0 +1,23 @@
+.message {
+  background-color: initial;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 15px;
+  font-size: 14px;
+  text-align: center;
+  width: 300px;
+  margin: 0 auto;
+  &.error {
+    background-color: #f44336;
+  }
+  &.warning {
+    background-color: #ff9800;
+    color: #000;
+  }
+  &.information {
+    background-color: #2196f3;
+  }
+  &.success {
+    background-color: #4caf50;
+  }
+}
