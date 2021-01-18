@@ -1,0 +1,17 @@
+.main-menu {
+  ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+  }
+  li {
+    padding: 0px 5px;
+  }
+  &__link {
+    font-weight: 600;
+    font-size: 17px;
+    &.active {
+      color: #fff;
+    }
+  }
+}

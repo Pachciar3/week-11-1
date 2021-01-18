@@ -7,24 +7,19 @@ import UsersList from "../components/UsersList";
 import { fetchUsers } from "../redux";
 
 function Users(props) {
-  const { fetchUsers, isLoading, isError, users } = props;
-  console.log(users);
+  const { fetchUsers, isError, users, isLoading } = props;
   useEffect(() => {
     if (users.length === 0) {
       fetchUsers();
     }
   }, [fetchUsers, users]);
 
-  if (isLoading) {
-    return <Loader />;
-  }
-  if (isError) { return <Message type="error">Something get wrong. Sorry</Message> };
-
   return (
-    <div className="users">
-      <h2>Users</h2>
-      <UsersList data={users} />
-    </div>
+    <>
+      {(users.length > 0) && <UsersList data={users} />}
+      {isError && <Message type="error">Something get wrong. Sorry</Message>}
+      {isLoading && <Loader />}
+    </>
   );
 }
 
