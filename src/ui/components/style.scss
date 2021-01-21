@@ -8,7 +8,7 @@
   width: 300px;
   margin: 0 auto;
   opacity: 1;
-  transition: 0.3s linear;
+  transition: 0.3s ease-in-out;
   &.hide {
     opacity: 0;
   }

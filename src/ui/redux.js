@@ -13,7 +13,6 @@ export const addMessage = (data) => ({ type: ADD_MESSAGE, payload: data });
 export const removeMessage = (data) => ({ type: REMOVE_MESSAGE, payload: data });
 
 const redux = (state = INITIAL_STATE, action) => {
-
   switch (action.type) {
     case ADD_MESSAGE:
       const { type, text } = action.payload;

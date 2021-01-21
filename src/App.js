@@ -13,6 +13,7 @@ import Home from "./home";
 import Users from "./users/containers/users";
 import Header from "./components/Header"
 import Messages from "./ui/containers/Messages";
+import Form from "./form/containers/Form";
 import rootReducer from "./rootReducer";
 import './app.scss';
 
@@ -35,6 +36,11 @@ function App() {
               <Route path="/users">
                 <Page title="Users">
                   <Users />
+                </Page>
+              </Route>
+              <Route path="/form">
+                <Page title="Form">
+                  <Form />
                 </Page>
               </Route>
             </Switch>

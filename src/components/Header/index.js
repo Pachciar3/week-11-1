@@ -10,6 +10,7 @@ function Header() {
         <ul>
           <li><NavLink className="main-menu__link" exact to="/">Home</NavLink></li>
           <li><NavLink className="main-menu__link" to="/users">Users</NavLink></li>
+          <li><NavLink className="main-menu__link" to="/form">Form</NavLink></li>
         </ul>
       </nav>
     </header>
