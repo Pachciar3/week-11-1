@@ -1,4 +1,5 @@
 import api from '../api';
+import { addMessage } from '../ui/redux';
 
 const FETCH_USERS_REQUESTED = "users/FETCH_USERS_REQUESTED";
 const FETCH_USER_SUCCEDED = "users/FETCH_USER_SUCCEDED";
@@ -22,14 +23,17 @@ const reset = () => ({ type: USERS_RESET });
 export const fetchUsers = () => {
   return function (dispatch) {
     dispatch(fetchRequested());
+    dispatch(addMessage({ type: "information", text: "Loading users..." }));
     api
       .get('?results=10')
       .then(data => {
         dispatch(fetchSucceded(data.results));
+        dispatch(addMessage({ type: "success", text: "Users loaded" }));
       })
       .catch(error => {
         console.error(error);
         dispatch(fetchFailed());
+        dispatch(addMessage({ type: "error", text: "Error ocured. Users are not loaded" }));
       });
   };
 };
@@ -37,14 +41,17 @@ export const fetchUsers = () => {
 export const fetchUser = () => {
   return function (dispatch) {
     dispatch(fetchRequested());
+    dispatch(addMessage({ type: "information", text: "Loading new user..." }));
     api
       .get('?results=1')
       .then(data => {
         dispatch(fetchUserSucceded(data.results));
+        dispatch(addMessage({ type: "success", text: "User loaded" }));
       })
       .catch(error => {
         console.log(error);
         dispatch(fetchFailed());
+        dispatch(addMessage({ type: "error", text: `User are not loaded. ${error}` }));
       });
   };
 };
@@ -52,6 +59,7 @@ export const fetchUser = () => {
 export const resetUsers = () => {
   return function (dispatch) {
     dispatch(reset());
+    dispatch(addMessage({ type: "warning", text: "Users state are reset" }));
   }
 }
 

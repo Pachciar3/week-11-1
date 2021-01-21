@@ -1,11 +1,10 @@
 import { combineReducers } from "redux";
-// import counterReducer from "./counter/redux";
+import uiReducer from "./ui/redux";
 import usersReducer from "./users/redux";
-// import usersReducer from "./users/redux";
 
 const rootReducer = combineReducers({
-  users: usersReducer
-  // users: usersReducer
+  users: usersReducer,
+  ui: uiReducer
 });
 
 export default rootReducer;

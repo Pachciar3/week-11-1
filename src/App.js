@@ -12,6 +12,7 @@ import Page from "./components/Page";
 import Home from "./home";
 import Users from "./users/containers/users";
 import Header from "./components/Header"
+import Messages from "./ui/containers/Messages";
 import rootReducer from "./rootReducer";
 import './app.scss';
 
@@ -37,6 +38,7 @@ function App() {
                 </Page>
               </Route>
             </Switch>
+            <Messages />
           </main>
           <footer>
             Created by <strong>Dawid Pachciarek</strong>
