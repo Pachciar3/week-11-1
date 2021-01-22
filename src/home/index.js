@@ -13,8 +13,8 @@ function Home(props) {
   );
 }
 
-const mapStateToProps = (state) => ({
-  isLoading: state.users.isLoading
+const mapStateToProps = () => ({
+
 });
 
 const mapDispatchToProps = (dispatch) => ({

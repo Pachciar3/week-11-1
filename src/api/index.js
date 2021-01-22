@@ -1,4 +1,4 @@
-const API_URL = "https://randomuser.me/api";
+const API_URL = process.env.REACT_APP_API_URL;
 
 function request(endpoint, method = "GET", data = null) {
   const config = {

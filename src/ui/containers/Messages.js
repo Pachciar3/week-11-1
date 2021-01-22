@@ -2,16 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 import { addMessage, removeMessage } from "../redux";
 
-import Message from "../components/Message"
+import MessagesList from "../components/MessagesList"
 
 import './styles.scss';
 
 function Messages({ messages, remove }) {
-  const allmessages = messages && messages.map(message => <Message removeDelay="2000" handleRemove={() => remove(message.id)} key={message.id} type={message.type}>{message.text}</Message>)
   return (
-    <div className="messages">
-      {allmessages}
-    </div>
+    <MessagesList messages={messages} remove={remove} />
   );
 }
 

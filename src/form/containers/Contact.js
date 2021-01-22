@@ -1,10 +1,12 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { connect } from "react-redux";
+
+import Form from '../components/Form';
 import { addMessage } from "../../ui/redux";
 
-function Form({ addMessage }) {
-  const { register, handleSubmit } = useForm();
+function Contact({ addMessage }) {
+  const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = data => {
     const headers = new Headers()
@@ -38,21 +40,7 @@ function Form({ addMessage }) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} style={{ display: "flex", flexDirection: "column" }}>
-      <label>
-        Name:
-        <input name="Name" type="text" ref={register({ required: true })} />
-      </label>
-      <label>
-        Phone Number:
-        <input name="phone-number" type="tel" ref={register} />
-      </label>
-      <label>
-        Message:
-        <textarea name="message" ref={register} />
-      </label>
-      <button type="submit">Send</button>
-    </form>
+    <Form handleSubmit={handleSubmit(onSubmit)} errors={errors} register={register} />
   )
 }
 
@@ -64,4 +52,4 @@ const mapDispatchToProps = (dispatch) => ({
   addMessage: (data) => dispatch(addMessage(data)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Form);
+export default connect(mapStateToProps, mapDispatchToProps)(Contact);

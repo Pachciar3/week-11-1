@@ -1,0 +1,20 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  &__input {
+    input,
+    textarea {
+      width: 100%;
+    }
+    textarea {
+      height: 50px;
+    }
+  }
+  &__label {
+    font-size: 14px;
+  }
+  &__error {
+    font-size: 12px;
+    color: red;
+  }
+}
