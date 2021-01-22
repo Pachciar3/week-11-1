@@ -4,8 +4,6 @@ import { addMessage, removeMessage } from "../redux";
 
 import MessagesList from "../components/MessagesList"
 
-import './styles.scss';
-
 function Messages({ messages, remove }) {
   return (
     <MessagesList messages={messages} remove={remove} />
