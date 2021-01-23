@@ -6,7 +6,8 @@ function Form({ handleSubmit, errors, register }) {
   const styles = {
     display: "flex",
     flexDirection: "column",
-    width: 400,
+    maxWidth: 400,
+    width: "100%",
     margin: "0px auto"
   }
 
